@@ -4,26 +4,26 @@
 
 #include <Arduino.h>
 
-void swapValues(float& a, float& b);                                                               // меняет местами значения
-void swapValues(int& a, int& b);
+template <typename T>
+void swapValues(T& a, T& b);                                                   // меняет местами значения
 
-bool ascending(float a, float b);                                                                  // параметр сортировки по возрастанию
-bool ascending(int a, int b);
+template <typename T>
+bool ascending(T a, T b);                                                      // параметр сортировки по возрастанию
 
-bool descending(float a, float b);                                                                 // параметр сортировки по убыванию
-bool descending(int a, int b);
+template <typename T>
+bool descending(T a, T b);                                                     // параметр сортировки по убыванию
 
-void copyArray(float* array, float* copy, uint16_t length);                                         // создание копии массива
-void copyArray(int* array, int* copy, uint16_t length);
+template <typename T>
+void copyArray(T* array, T* copy, uint16_t length);                            // создание копии массива
 
-void sortArray(float* array, uint16_t length, bool (*comparisonFcn)(float, float));                 // сортировка массива
-void sortArray(int* array, uint16_t length, bool (*comparisonFcn)(int, int));
+template <typename T>
+void sortArray(T* array, uint16_t length, bool (*comparisonFcn)(T, T));        // сортировка массива
 
-float averageValue(float* array, uint16_t length);                                                  // нахождение усредненного значения в массиве
-float averageValue(int* array, uint16_t length);
+template <typename T>
+float averageValue(T* array, uint16_t length);                                 // нахождение усредненного значения в массиве
 
-float medianValue(float* array, uint16_t length);                                                   // нахождение медианного значения в массиве
-float medianValue(int* array, uint16_t length);
+template <typename T>
+float medianValue(T* array, uint16_t length);                                  // нахождение медианного значения в массиве
 
-float filterValue(float* array, uint16_t length, float (*referenceFcn)(float* array, uint16_t length), uint16_t maxDiffPercent);     // нахождение отфильтрованного значения
-float filterValue(int* array, uint16_t length, float (*referenceFcn)(int* array, uint16_t length), uint16_t maxDiffPercent);
+template <typename T>
+float filterValue(T* array, uint16_t length, float (*referenceFcn)(T* array, uint16_t length), uint16_t maxDiffPercent);       // нахождение отфильтрованного значения
