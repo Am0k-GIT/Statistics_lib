@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include <cstdint>
+#include <stdint.h>
 
 template <typename T>
 void swapValues(T& a, T& b);                                                   // меняет местами значения
