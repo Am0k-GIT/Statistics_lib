@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include <Arduino.h>
+#include <cstdint>
 
 template <typename T>
 void swapValues(T& a, T& b);                                                   // меняет местами значения
